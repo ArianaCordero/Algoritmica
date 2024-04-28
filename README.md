@@ -1,30 +1,16 @@
 # Algorítmica I
-<P>
-Presentación de la materia y repositorio:
-</P>
 
-- Este repositorio de la materia de algorítmica tiene como propósito el apoyo a la materia, un recurso para poder entenderlo mejor. Su objetivo es ser más explícito para facilitar el proceso de aprendizaje y ayudar a entender mejor el código.
-**Se ira actualizando en el transcurso de la clase**
+## Presentación de la Materia y Repositorio:
 
-**Table of Contents**
+Este repositorio de la materia de Algorítmica tiene como propósito ofrecer apoyo durante el curso, sirviendo como un recurso para comprender mejor los conceptos. Nuestro objetivo es proporcionar explicaciones explícitas que faciliten el proceso de aprendizaje y mejoren la comprensión del código.
 
-[TOCM]
+**Este README se actualizará periódicamente a lo largo del curso.**
 
-[TOC]
+## Índice
 
-##Estructura de datos
-###pilas
-####push
-####pop
-####peek
-####isEmpty
-###Colas
-####enqueue
-####dequeue
-####front
-####isEmpty
-###Grafos
-####Dirigidos
-####No Dirigidos
-###DFS
-###BFS
+- [Estructura de Datos](#estructura-de-datos)
+  - [Pilas](#pilas)
+  - [Colas](#colas)
+  - [Grafos](#grafos)
+  - [DFS](#dfs)
+  - [BFS](#bfs)
