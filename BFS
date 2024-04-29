@@ -1,0 +1,49 @@
+#include <bits/stdc++.h> // incluye todas las librerias 
+using namespace std;
+//ESTRUCTURA DE DATOS
+//BFS 
+bool vis[10000]; // Arreglo para marcar los nodos visitados
+vector<int> grafo[10000]; // Lista de adyacencia para representar las relaciones entre nodos
+int niveles[10000]; // Arreglo para almacenar los niveles de los nodos
+
+// Función BFS para recorrer el grafo por niveles
+void bfs (int nodoInicial) {
+    queue<int> colita; // Cola para almacenar los nodos a visitar
+    colita.push(nodoInicial); // Agrega el nodo inicial a la cola
+    niveles[nodoInicial] = 0; // Establece el nivel del nodo inicial como 0
+    while(!colita.empty()){ // Mientras la cola no esté vacía
+        int nodoActual = colita.front(); // Obtiene el primer elemento de la cola (nodo actual)
+        colita.pop(); // Elimina el nodo actual de la cola
+
+        if(!vis[nodoActual]) { // Si el nodo actual no ha sido visitado
+            vis[nodoActual] = true; // Marca el nodo actual como visitado
+            // Empezar a visitar a los nodos vecinos o amigos del nodo actual
+            for(int i = 0; i < grafo[nodoActual].size(); i++ ){
+                int amigo = grafo[nodoActual][i]; // Obtiene el nodo vecino o amigo
+                niveles[amigo] = niveles[nodoActual] + 1; // Establece el nivel del amigo
+                if(!vis[amigo]) { // Si el amigo no ha sido visitado
+                    colita.push(amigo); // Agrega el amigo a la cola para visitarlo después
+                } 
+            }   
+        }
+    }
+}
+
+int main() {
+    int nodos, aristas;
+    cin>>nodos>>aristas; // Lee la cantidad de nodos y aristas del grafo
+    for(int i = 0 ; i < aristas; i++ ) {
+        int nodoInicial, nodoFinal;
+        cin>>nodoInicial>>nodoFinal; // Lee las aristas del grafo
+        grafo[nodoInicial].push_back(nodoFinal); // Agrega la arista al grafo
+    }
+    // Verificar si se puede llegar del nodo S al nodo T
+    int S,T; 
+    cin>>S>>T; // Lee los nodos S y T
+    bfs(S); // Realiza un recorrido BFS desde el nodo S
+    if(vis[T]) { // Si el nodo T ha sido visitado
+        cout<<"Si lo podria conocer"<<endl; // Imprime que se podría llegar a conocer el nodo T desde el nodo S
+    } else {
+        cout<<"No lo podria conocer"<<endl; // Imprime que no se podría llegar a conocer el nodo T desde el nodo S
+    }
+}
