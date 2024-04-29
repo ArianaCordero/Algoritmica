@@ -1,0 +1,54 @@
+#include <bits/stdc++.h> // incluye todas las librerias 
+using namespace std;
+// ESTRUCTURA DE DATOS
+
+//Colas
+//Ejemplo pueden ser una cola de personas.
+//Una Cola es una estructura de datos lineal.
+//FIFO (First In, First Out)
+// primer elemento que se inserta en la cola sera el primero en salir.
+
+void printQueue(queue<int> colaa) {
+    while (!colaa.empty()) {
+        cout << colaa.front() << " ";
+        colaa.pop();
+    }
+    cout << endl;
+}
+
+
+int main() {
+    // Creamos una cola de enteros
+    queue<int> cola;
+    // Se agrega elementos a la cola (enqueue)
+    cola.push(10);
+    cola.push(20);
+    cola.push(30);
+
+     cout << "La cola inicial es: ";
+    printQueue(cola);
+
+    // Verificamos si la cola esta vacia
+    if (cola.empty()) {
+        cout << "La cola esta vacía :(" << endl;
+    } else {
+        cout << "La cola no esta vacia :)" << endl;
+    }
+    // 1er numero de la cola (front)
+    cout << "El 1er numero es: " << cola.front() << endl;
+    // Eliminamos el elemento del frente de la cola (dequeue)
+    cola.pop();
+
+     cout << "La cola final es: ";
+    printQueue(cola);
+
+    // Verificamos nuevamente si la cola está vacía
+    if (cola.empty()) {
+        cout << "La cola esta vacía :(." << endl;
+    } else {
+        cout << "La cola no esta vacia :)" << endl;
+    }
+
+    return 0;
+}
+

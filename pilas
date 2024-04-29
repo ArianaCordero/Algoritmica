@@ -1,0 +1,43 @@
+#include <bits/stdc++.h> // incluye todas las librerias 
+using namespace std;
+//ESTRUCTURA DE DATOS
+
+//Pilas 
+//Ejemplo pueden ser las cartas.
+//Una pila es una estructura de datos lineal.
+//LIFO (Last In, First Out)
+//último elemento en ser agregado es el primero en ser eliminado
+int main() {
+    stack<int> pila; // Creamos una pila 
+    // Agregamos numeros 
+    pila.push(1);
+    pila.push(2);
+    pila.push(3);
+    pila.push(4);
+    pila.push(5);
+    // Elementos en la pila
+    cout << "Cantidad de elementos en la pila: " << pila.size() << '\n';
+    //// '\n' es saltode linea en C++
+    // Sacamos un elemento de la pila
+    pila.pop();
+    pila.pop();
+    // Mostramos cuantos elementos quedan en la pila despues de sacar dos
+    cout << "Cantidad de elementos en la pila después de sacar dos: " << pila.size() << '\n';
+    // Agregamos más números a la pila
+    pila.push(6);
+    pila.push(7);
+    // Mostrar el ultimo de la pila
+    cout << "El ultimo en la pila es : " << pila.top() << '\n';
+    // Sacamos dos elementos de la pila
+    pila.pop();
+    pila.pop();
+ 
+    // Ver si la pila esta vacia
+    if (pila.empty()) 
+        cout << "La pila no tiene elementos :( \n";
+    else 
+        cout << "La pila tiene elementos :)\n";
+ 
+    return 0;
+
+}
